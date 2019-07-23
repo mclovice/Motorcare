@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "600339784936",
+    "firebase_url": "https://motocarefinal.firebaseio.com",
+    "project_id": "motocarefinal",
+    "storage_bucket": "motocarefinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600339784936:android:30bf6bce44294578",
+        "android_client_info": {
+          "package_name": "com.example.motorcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600339784936-t8943nqb8v3p7jnt8acqaan14m6d0aug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.motorcare",
+            "certificate_hash": "9767ed8b23fc952fa9bbce663ad03c6710239b64"
+          }
+        },
+        {
+          "client_id": "600339784936-loepk7v07kmpd8tk9pf2h0pvm3evk1nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAApqmzcJobjR_nTZkXd4fWqqEeap8Tcfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600339784936-loepk7v07kmpd8tk9pf2h0pvm3evk1nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
