@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminUpdateMechanic"
+    android:padding="20sp">
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Garage Name"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_name_update"
+        />
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Location"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_location_update"
+        />
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Director's name"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_director_name_update"
+        />
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_dir_contact_update"
+        />
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NIN"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/directors_nin_update"/>
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Create garage ID"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_id_update"/>
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Create garage password"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_password_update"/>
+
+    <EditText
+        android:layout_marginTop="10sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm password"
+        android:inputType="text"
+        android:textSize="25dp"
+        android:id="@+id/garage_pass_confirm_update"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="30sp">
+
+        <Button
+            android:id="@+id/cancel_mechanic_update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2sp"
+            android:background="@drawable/login_button_file"
+            android:text="Cancel"
+            android:backgroundTint="#DA942E"
+            android:textAlignment="center"
+            android:textColor="#FDFCFC"
+            android:textSize="25sp"
+             />
+
+
+
+
+        <Button
+            android:id="@+id/update_mechanic_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2sp"
+            android:background="@drawable/login_button_file"
+            android:text="update"
+            android:textAlignment="center"
+            android:textColor="#FDFCFC"
+            android:textSize="25sp"
+             />
+    </LinearLayout>
+</LinearLayout>

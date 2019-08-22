@@ -3,6 +3,7 @@
     package="com.example.motorcare">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,17 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MechanicHomeActivity"></activity>
+        <activity android:name=".Recycler_Spare_Retrieve_CarOwner"></activity>
+        <activity android:name=".Recycler_Emergency_retrieve_Mech" />
+        <activity android:name=".Recycler_Info_Retrieve" />
+        <activity android:name=".EmergencyRecycler" />
+        <activity android:name=".Emergency_Handling_Mechanic" />
+        <activity android:name=".Mechanic_Info_Upload" />
+        <activity android:name=".SpareParts" />
+        <activity android:name=".AdminsLogin" />
+        <activity android:name=".AdminAccount_create" />
+        <activity android:name=".AccessSpares_CarOwner" />
+        <activity android:name=".Access_Info_CarOwner" />
+        <activity android:name=".AdminsCoverPage" />
+        <activity android:name=".CallMechanic" />
         <activity android:name=".CreateAccountMechanic" />
         <activity android:name=".MechanicLoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".WashingBayActivity" />
         <activity android:name=".CarHiringActivity" />
         <activity android:name=".FuelActivity" />
+        <activity android:name=".Emergency" />
+        <activity android:name=".Mechanic_Access" />
+        <activity android:name=".Emergency_List" />
         <activity android:name=".AvailableMechanics" />
         <activity android:name=".HomeCustomer" />
         <activity android:name=".CreateAccount_driver" />
-        <activity android:name=".DefaultActivity">
+        <activity android:name=".DefaultActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

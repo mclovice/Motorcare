@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Emergency_List"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergencies"
+            android:textColor="#070707"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:text="pending"
+                android:textSize="20sp"
+                android:textColor="#FDFCFC"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#DA942E"
+                android:textAlignment="center"
+                android:background="@drawable/login_button_file"
+                android:layout_marginTop="20sp"
+                android:layout_height="wrap_content"
+                android:id="@+id/pending_emergency_btn"
+                />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:text="active"
+                    android:textSize="20sp"
+                    android:textColor="#FDFCFC"
+                    android:layout_marginLeft="10dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/login_button_file"
+                    android:layout_marginTop="20sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/active_emergency_btn"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:text="handled"
+                    android:textSize="20sp"
+                    android:textColor="#FDFCFC"
+                    android:layout_marginLeft="10dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/login_button_file"
+                    android:layout_marginTop="20sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/handled_emergency_btn"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:text="ok"
+            android:textSize="25dp"
+            android:textColor="#FDFCFC"
+            android:layout_marginLeft="130dp"
+            android:textAlignment="center"
+            android:background="@drawable/login_button_file"
+            android:layout_marginTop="20sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/emergency_ok_btn"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        android:layout_marginTop="20dp"
+        >
         <android.support.v7.widget.CardView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
@@ -27,10 +29,10 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@mipmap/mecha"/>
+                    android:src="@mipmap/repair"/>
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Mechanic"
+                    android:text="Mechanics"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -38,7 +40,7 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:layout_width="160dp"
-            android:id="@+id/fuel"
+            android:id="@+id/emergency_cd_view"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:layout_margin="10dp"
@@ -51,10 +53,10 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@mipmap/stat"/>
+                    android:src="@mipmap/car_emergency"/>
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Fuel"
+                    android:text="Emergency"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -65,11 +67,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        android:layout_marginTop="10dp">
         <android.support.v7.widget.CardView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:id="@+id/washingbay"
+            android:id="@+id/info_cd_view"
             android:clickable="true"
             android:layout_margin="10dp"
             android:foreground="?android:attr/selectableItemBackground">
@@ -81,17 +84,17 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@mipmap/wash"/>
+                    android:src="@mipmap/info"/>
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Washing bay"
+                    android:text="Car maintenance info"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
-            android:id="@+id/carhiring"
+            android:id="@+id/spares_cd_view"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -105,10 +108,10 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@mipmap/carh"/>
+                    android:src="@mipmap/myspares"/>
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Car hiring"
+                    android:text="Spare parts"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>

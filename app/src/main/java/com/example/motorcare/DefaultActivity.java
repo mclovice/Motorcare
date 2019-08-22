@@ -1,7 +1,7 @@
 package com.example.motorcare;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class DefaultActivity extends AppCompatActivity {
     CardView Driver,Mechanic;
@@ -21,6 +20,8 @@ public class DefaultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_default);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Home");
         Driver = findViewById(R.id.driverCardView1);
         Mechanic = findViewById(R.id.mechanicCardView1);
         Admin = findViewById(R.id.Administrator_btn1);
@@ -50,6 +51,14 @@ public class DefaultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mechanic = new Intent(DefaultActivity.this,MechanicLoginActivity.class);
                 startActivity(mechanic);
+            }
+        });
+
+        Admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DefaultActivity.this, AdminsLogin.class);
+                startActivity(intent);
             }
         });
     }

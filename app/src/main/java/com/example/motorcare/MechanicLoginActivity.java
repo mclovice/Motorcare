@@ -3,6 +3,7 @@ package com.example.motorcare;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class MechanicLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mechanic_login);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Mechanic login page");
         Register = findViewById(R.id.createAccount_mechanic);
         Username = findViewById(R.id.username_mechanic);
         Password =findViewById(R.id.password_mechanic);
@@ -64,8 +67,8 @@ public class MechanicLoginActivity extends AppCompatActivity {
                                         Password.setText("");
 
                                     }else {
-                                        Intent homescreen = new Intent(MechanicLoginActivity.this, MechanicHomeActivity.class);
-                                        startActivity(homescreen);
+                                        Intent home_screen = new Intent(MechanicLoginActivity.this, Mechanic_Access.class);
+                                        startActivity(home_screen);
                                         dialog.dismiss();
                                     }
                                 }

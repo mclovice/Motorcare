@@ -1,7 +1,9 @@
 package com.example.motorcare;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -11,6 +13,8 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -18,14 +22,20 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class AvailableMechanics extends AppCompatActivity {
     private ArrayList<MechanicAdapter> mData;
     private ArrayList<String> mDataId;
     private CatalogAdapter mAdapter;
     private ActionMode mActionMode;
+    TextView PhoneNumber;
+    ImageView CallImage;
+    private CatalogAdapter.AdapterCallback onImageClickListener;
+
 
     private DatabaseReference mReference;
 
@@ -36,6 +46,7 @@ public class AvailableMechanics extends AppCompatActivity {
             mDataId.add(dataSnapshot.getKey());
             mAdapter.updateEmptyView();
             mAdapter.notifyDataSetChanged();
+
         }
 
         @Override
@@ -71,11 +82,32 @@ public class AvailableMechanics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mechanic);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Available mechanics");
+        PhoneNumber = findViewById(R.id.garage_phone);
+        CallImage = findViewById(R.id.callmechanic);
 
         mData = new ArrayList<>();
         mDataId = new ArrayList<>();
         mReference = FirebaseDatabase.getInstance().getReference().child("Mechanics");
         mReference.addChildEventListener(childEventListener);
+        mReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0){
+                    Map<String,Object> map = (Map<String, Object>)dataSnapshot.getValue();
+                    if(map.get("phone")!=null){
+                        PhoneNumber.setText(map.get("phone").toString());
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -86,36 +118,46 @@ public class AvailableMechanics extends AppCompatActivity {
 
         View emptyView = findViewById(R.id.empty_view);
         mAdapter = new CatalogAdapter(this, mData, mDataId, emptyView, new CatalogAdapter.ClickHandler() {
-            @Override
-            public void onItemClick(int position) {
+                    @Override
+                    public void onItemClick(int position) {
 
-                if (mActionMode != null) {
+                        if (mActionMode != null) {
 
-//                    mAdapter.toggleSelection(mDataId.get(position));
-//                    if (mAdapter.selectionCount()==0)
-//                        mActionMode.finish();
-//                    else
-//                        mActionMode.invalidate();
-//                    return;
-                }
+        //                    mAdapter.toggleSelection(mDataId.get(position));
+        //                    if (mAdapter.selectionCount()==0)
+        //                        mActionMode.finish();
+        //                    else
+        //                        mActionMode.invalidate();
 
-                String pet = mData.get(position).toString();
-                Toast.makeText(AvailableMechanics.this, pet, Toast.LENGTH_SHORT).show();
-            }
+                            return;
+                        }
 
-            @Override
-            public boolean onItemLongClick(int position) {
+                        String pet = mData.get(position).toString();
+                        Toast.makeText(AvailableMechanics.this, pet, Toast.LENGTH_SHORT).show();
+                    }
 
-                if (mActionMode != null) return false;
+                    @Override
+                    public boolean onItemLongClick(int position) {
 
-                // mAdapter.toggleSelection(mDataId.get(position));
-                // mActionMode = AvailableMechanics.this.startSupportActionMode(mActionModeCallBack);
-                return true;
+                        if (mActionMode != null) return false;
 
-            }
-        });
+                        // mAdapter.toggleSelection(mDataId.get(position));
+                        // mActionMode = AvailableMechanics.this.startSupportActionMode(mActionModeCallBack);
+                        return true;
+
+                    }
+                }, onImageClickListener);
 
         recyclerView.setAdapter(mAdapter);
+
+//        CallImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AvailableMechanics.this, CallMechanic.class);
+//                intent.putExtra("phone","This is contact");
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private ActionMode.Callback mActionModeCallBack = new ActionMode.Callback() {
@@ -132,6 +174,8 @@ public class AvailableMechanics extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+
+
             return false;
         }
 

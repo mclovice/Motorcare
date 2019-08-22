@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:textAllCaps="true"
             android:id="@+id/garage_name"
             android:hint="Garage Name"/>
 
@@ -53,6 +54,12 @@
                 android:src="@drawable/call_mechanic_24dp"/>
 
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/call_view"
+            android:visibility="gone"
+            android:text="Caller"/>
 
 
     </LinearLayout>

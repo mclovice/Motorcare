@@ -1,6 +1,7 @@
 package com.example.motorcare;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -11,17 +12,19 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeCustomer extends AppCompatActivity {
-    CardView Mechanic,Fuel,CarHiring,WashingBay;
+    CardView Mechanic,Info,Emergency1,SpareP;
     private  FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_customer);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Services");
         Mechanic = findViewById(R.id.mechanic);
-        Fuel = findViewById(R.id.fuel);
-        CarHiring = findViewById(R.id.carhiring);
-        WashingBay = findViewById(R.id.washingbay);
+        Info = findViewById(R.id.info_cd_view);
+        Emergency1 = findViewById(R.id.emergency_cd_view);
+        SpareP = findViewById(R.id.spares_cd_view);
         mAuth = FirebaseAuth.getInstance();
         Mechanic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,25 +33,25 @@ public class HomeCustomer extends AppCompatActivity {
                 startActivity(mechanic);
             }
         });
-        Fuel.setOnClickListener(new View.OnClickListener() {
+        Info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent fuel = new Intent(HomeCustomer.this, FuelActivity.class);
-                startActivity(fuel);
+                Intent info = new Intent(HomeCustomer.this, Recycler_Info_Retrieve.class);
+                startActivity(info);
             }
         });
-        CarHiring.setOnClickListener(new View.OnClickListener() {
+        Emergency1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent hiring = new Intent(HomeCustomer.this, CarHiringActivity.class);
-                startActivity(hiring);
+                Intent emerge = new Intent(HomeCustomer.this, Emergency.class);
+                startActivity(emerge);
             }
         });
-        WashingBay.setOnClickListener(new View.OnClickListener() {
+        SpareP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent washing = new Intent(HomeCustomer.this, WashingBayActivity.class);
-                startActivity(washing);
+                Intent spare = new Intent(HomeCustomer.this, Recycler_Spare_Retrieve_CarOwner.class);
+                startActivity(spare);
             }
         });
     }

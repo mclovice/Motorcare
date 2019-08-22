@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Emergency"
+    android:orientation="vertical"
+
+    android:padding="20sp">
+
+
+
+    <EditText
+        android:id="@+id/problem"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Problem description here"
+        android:inputType="text"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_marginTop="20sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Location"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:id="@+id/emergency_location"
+        />
+    <EditText
+        android:layout_marginTop="20sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact"
+        android:inputType="phone"
+        android:textSize="20dp"
+        android:id="@+id/emergency_phone"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="30sp">
+
+        <Button
+            android:id="@+id/cancel_prob"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/login_button_file"
+            android:text="Cancel"
+            android:textAlignment="center"
+            android:textColor="#0A0A0A"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/submit_prob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/login_button_file"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:textColor="#0A0A0A"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

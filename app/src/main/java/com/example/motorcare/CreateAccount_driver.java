@@ -55,22 +55,30 @@ public class CreateAccount_driver extends AppCompatActivity {
 
                 if(Fname.isEmpty() && Fname.length()<3){
                     Toast.makeText(CreateAccount_driver.this,"Please enter name that is not less than three character",Toast.LENGTH_LONG).show();
-                } else if(Contact.isEmpty()){
-                    Toast.makeText(CreateAccount_driver.this,"Please enter phone number",Toast.LENGTH_LONG).show();
+                }
+
+                else if(Contact.isEmpty() && Contact.length()<10 ){
+                    Toast.makeText(CreateAccount_driver.this,"Please enter phone number not less than 10 digits",Toast.LENGTH_LONG).show();
 
                 }else if(UName.isEmpty()){
                     Toast.makeText(CreateAccount_driver.this,"Please enter User name",Toast.LENGTH_LONG).show();
+                }else if(UName.length() < 4 && UName.length() > 20){
+                    Toast.makeText(CreateAccount_driver.this,"User name should be between 6 to 18 characters",Toast.LENGTH_LONG).show();
+                }
 
-                }else if(Pass.isEmpty()){
+                else if(Pass.isEmpty()){
                     Toast.makeText(CreateAccount_driver.this,"Please enter password",Toast.LENGTH_LONG).show();
+                }else if(Pass.length() < 6){
+                    Toast.makeText(CreateAccount_driver.this,"Password should have at least 6 characters",Toast.LENGTH_LONG).show();
+                }
 
-                }else if(!CPass.equals(Pass)){
+                else if(!CPass.equals(Pass)){
                     Toast.makeText(CreateAccount_driver.this,"Password fields not matching",Toast.LENGTH_LONG).show();
 
                 }else {
                     final ProgressDialog dialog = new ProgressDialog(CreateAccount_driver.this);
                     dialog.setTitle("CREATING ACCOUNT");
-                    dialog.setMessage("Please wait........");
+                    dialog.setMessage("Please wait.....");
                     dialog.show();
                     mAuth.createUserWithEmailAndPassword(UName,Pass).addOnCompleteListener(CreateAccount_driver.this, new OnCompleteListener<AuthResult>() {
                         @Override

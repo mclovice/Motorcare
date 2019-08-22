@@ -65,26 +65,41 @@ public class CreateAccountMechanic extends AppCompatActivity {
                 else if(PhoneG.isEmpty()){
                     Toast.makeText(CreateAccountMechanic.this,"Please enter phone",Toast.LENGTH_LONG).show();
 
-                } else if(location.isEmpty()){
-                    Toast.makeText(CreateAccountMechanic.this,"Please location field is empty"  ,Toast.LENGTH_LONG).show();
-
-                }else if(Director.isEmpty()){
-
-                    Toast.makeText(CreateAccountMechanic.this,"Please enter Director's Name"  ,Toast.LENGTH_LONG).show();
-                }else if(UsernameGarage.isEmpty()) {
-
-                    Toast.makeText(CreateAccountMechanic.this, "Please enter Garage UserName", Toast.LENGTH_LONG).show();
+                }else if(PhoneG.length() < 10 && PhoneG.length() > 15){
+                    Toast.makeText(CreateAccountMechanic.this,"Phone should have at least 10 digits",Toast.LENGTH_LONG).show();
                 }
+
+                else if(location.isEmpty()){
+                    Toast.makeText(CreateAccountMechanic.this,"Please location field is empty"  ,Toast.LENGTH_LONG).show();
+                }else if(location.length() < 4 && location.length() > 20){
+                    Toast.makeText(CreateAccountMechanic.this,"location should have at least 4 to 20 characters",Toast.LENGTH_LONG).show();
+                }
+
+                else if(Director.isEmpty()){
+                    Toast.makeText(CreateAccountMechanic.this,"Please enter Director's Name"  ,Toast.LENGTH_LONG).show();
+                }else if(Director.length() < 4 && Director.length() > 20){
+                    Toast.makeText(CreateAccountMechanic.this,"Director should have at least 4 to 20 characters",Toast.LENGTH_LONG).show();
+                }
+
+                else if(UsernameGarage.isEmpty()) {
+                    Toast.makeText(CreateAccountMechanic.this, "Please enter Garage UserName", Toast.LENGTH_LONG).show();
+                }else if(UsernameGarage.length() < 4 && UsernameGarage.length() > 20){
+                    Toast.makeText(CreateAccountMechanic.this,"Garage User name should have at least 6 to 18 characters",Toast.LENGTH_LONG).show();
+                }
+
                 else if(Pass.isEmpty()){
                     Toast.makeText(CreateAccountMechanic.this,"Please Password field",Toast.LENGTH_LONG).show();
+                }
+                else if(Pass.length() < 6){
+                    Toast.makeText(CreateAccountMechanic.this,"Password should have at least 6 characters",Toast.LENGTH_LONG).show();
+                }
 
-                }else if (!Confirm.equals(Pass)){
+                else if (!Confirm.equals(Pass)){
                     Toast.makeText(CreateAccountMechanic.this,"Password fields not matching",Toast.LENGTH_LONG).show();
-
                 }else {
                     final ProgressDialog dialog = new ProgressDialog(CreateAccountMechanic.this);
                     dialog.setTitle("Creating account");
-                    dialog.setMessage("Please wait..");
+                    dialog.setMessage("Please wait....");
                     dialog.show();
                     mAuth.createUserWithEmailAndPassword(UsernameGarage, Pass).addOnCompleteListener(CreateAccountMechanic.this,
                             new OnCompleteListener<AuthResult>() {
